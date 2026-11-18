@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOID X | العالم المجهول</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#05030b;
+ color:white;
+ font-family:Arial,sans-serif;
+ overflow-x:hidden;
+}
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ background:
+ radial-gradient(circle at 50% 20%,#581c8770,transparent 40%),
+ radial-gradient(circle at 10% 90%,#31105b50,transparent 35%);
+ z-index:-1;
+}
+header{
+ padding:22px;
+ display:flex;
+ justify-content:space-between;
+ border-bottom:1px solid #512080;
+}
+.logo{color:#c084fc;font-size:25px;font-weight:bold;letter-spacing:4px}
+.hero{text-align:center;padding:100px 20px 65px}
+.hero h1{font-size:55px;color:#c084fc;text-shadow:0 0 30px #9333ea}
+.hero p{color:#bbaacb;line-height:2}
+button{
+ background:linear-gradient(120deg,#9333ea,#4c1d95);
+ color:white;border:1px solid #c084fc;
+ padding:14px 25px;border-radius:12px;
+ font-size:16px;cursor:pointer;
+}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:15px;padding:20px;max-width:1000px;margin:auto;
+}
+.card{
+ background:#171020dd;border:1px solid #512080;
+ padding:25px;border-radius:18px;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-7px);border-color:#c084fc}
+.card h2{color:#c084fc}
+footer{text-align:center;padding:35px;color:#8d7a9e}
+#secret{display:none;text-align:center;padding:40px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">VOID X</div>
+<div>◈ SYSTEM ONLINE</div>
+</header>
+
+<section class="hero">
+<h1>VOID X</h1>
+<h2>مرحباً بك في العالم المجهول</h2>
+<p>لقد وصلت إلى مكان لا يعرفه الكثيرون.<br>اكتشف الأسرار وافتح البوابات المجهولة.</p>
+<button onclick="enter()">دخول النظام ◈</button>
+</section>
+
+<section class="grid">
+<div class="card">
+<h2>🌀 البوابات</h2>
+<p>اكتشف العوالم المخفية.</p>
+<button onclick="show('البوابات قيد الاكتشاف')">استكشف</button>
+</div>
+<div class="card">
+<h2>🧩 الألغاز</h2>
+<p>اختبر ذكاءك واكتشف الأسرار.</p>
+<button onclick="show('قريباً ستبدأ التحديات')">ابدأ</button>
+</div>
+<div class="card">
+<h2>💻 النظام</h2>
+<p>اكتشف ملفات VOID X.</p>
+<button onclick="show('SYSTEM: ALL SYSTEMS READY')">فتح النظام</button>
+</div>
+</section>
+
+<section id="secret">
+<h2 id="message"></h2>
+<button onclick="closeSecret()">رجوع</button>
+</section>
+
+<footer>VOID X © 2026 — THE UNKNOWN</footer>
+
+<script>
+function enter(){
+ document.getElementById('message').innerText='تم فتح بوابة VOID X';
+ document.getElementById('secret').style.display='block';
+ document.getElementById('secret').scrollIntoView({behavior:'smooth'});
+}
+function show(msg){
+ document.getElementById('message').innerText=msg;
+ document.getElementById('secret').style.display='block';
+ document.getElementById('secret').scrollIntoView({behavior:'smooth'});
+}
+function closeSecret(){
+ document.getElementById('secret').style.display='none';
+}
+</script>
+</body>
+</html>
